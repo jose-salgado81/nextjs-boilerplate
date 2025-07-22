@@ -30,7 +30,7 @@ export default async function handler(req, res) {
 
   try {
     const fbRes = await fetch(
-      `https://graph.facebook.com/v19.0/1136011008587575/events?access_token=EAAKGs42GiTIBPKFpAGI1wHDCP6Iwsrwpkn6sgZCECHuZAS0fKDvGfJwUSakF5vu1Y0hZA7slvgfTTYF2sFZCyx8nZB14tZCSBr5dDbBhxJDrNvl70Gp4nZCpNWTk7g23dZBdvDuvNZCuYRIo20EQWkuJZBR8jRUZC6mP4gZBwwOhHHgZCF466cdYqEAMSAXr94XQkqmyY7wZDZD`,
+      `https://graph.facebook.com/v19.0/1136011008587575/events?access_token=EAAKGs42GiTIBPLNZAUEZAolqg0ybj6tiGY4p0kIFe3H19yl7dZAUnvOUIoYxRtDKzqRyjmwKh8sPezxz9SDW1v2I0ZBodageqeLKBFDK99TzBujCLHTOkzjBV3MSzideMGnqK2VzJl2DXpw73M0PSbcXtg13EIn5rm6MMumzdjDOBdSaemu78ohci4iy3VxINAZDZD`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
