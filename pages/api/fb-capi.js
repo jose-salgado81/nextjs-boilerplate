@@ -6,7 +6,7 @@ export default function handler(req, res) {
   console.log('Received payload:', req.body); // Logs to Vercel Function Logs
 
   res.status(200).json({
-    message: 'Payload received',
+    message: 'Payload received now',
     received: req.body
   });
 }
