@@ -18,11 +18,9 @@ export default async function handler(req, res) {
     test_event_code
   } = req.body;
 
-  // If email or phone are provided unhashed, hash them here
   let emHashed = user_data?.em;
   let phHashed = user_data?.ph;
 
-  // Optionally hash if emails or phones are plain text (add your logic)
   if (emHashed && !emHashed[0]?.match(/^[a-f0-9]{64}$/i)) {
     emHashed = [hash(emHashed[0])];
   }
@@ -50,7 +48,7 @@ export default async function handler(req, res) {
 
   try {
     const fbRes = await fetch(
-      `https://graph.facebook.com/v19.0/706967978816541/events?access_token=YOUR_ACCESS_TOKEN`,
+      `https://graph.facebook.com/v19.0/706967978816541/events?access_token=EAANtXefOJ9MBPKeq80ZBRuhEE5rJ8N7Jf2oBQtBvdRrwKLwQDZA53wlwf9X1H9Te6LEZC8DjIMMQ60GZACnV9GKyhpjBnvZCfHP8ZCAW6K7xxlOhGSmmqTkQOfBxZAcyic1xKXmBPRRVOZBuA3ZClQnUsJAcYdxMM2CIrxe8LrT7M3imNtClTMGi22agDyBDQEpNEzAZDZD`,
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
