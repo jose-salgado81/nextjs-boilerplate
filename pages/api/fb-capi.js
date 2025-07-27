@@ -1,10 +1,12 @@
-export default async function handler(req, res) {
-  if (req.method !== 'POST') return res.status(405).end('Method Not Allowed');
+export default function handler(req, res) {
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
 
-  console.log('Received payload:', req.body); // Optional, for Vercel logs
+  console.log('Received payload:', req.body); // Logs to Vercel Function Logs
 
-  return res.status(200).json({
-    message: 'Payload received successfully',
+  res.status(200).json({
+    message: 'Payload received',
     received: req.body
   });
 }
