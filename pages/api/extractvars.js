@@ -1,12 +1,10 @@
-export default async function handler(req, res) {
-  if (req.method === 'POST') {
-    console.log('Received payload:', req.body); // This shows up in Vercel's logs
-
-    return res.status(200).json({
-      message: 'Payload received',
-      received: req.body,
-    });
+export default function handler(req, res) {
+  if (req.method === "POST") {
+    console.log("Received POST:", req.body);
+    res.status(200).json({ status: "ok", received: req.body });
+  } else if (req.method === "GET") {
+    res.status(200).json({ message: "GET request received - endpoint is live" });
   } else {
-    return res.status(405).json({ message: 'Method not allowed' });
+    res.status(405).json({ message: "Method not allowed" });
   }
 }
